@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- 3rd Party -->
+    <script src="lib/zepto/dist/zepto.min.js"></script>
+    <script src="lib/mustache/mustache.js"></script>
+    <script src="lib/curl/dist/curl-kitchen-sink/curl.js"></script>
+</head>
+<body>
+<script>
+    curl(['app'],function(App){
+        var myApp = new App({title:'Application Title'})
+    })
+</script>
+</body>
+</html>
