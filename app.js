@@ -3,25 +3,19 @@
 
 
 define([
-    'text!app.tmpl.html',
-    'link!lib/bootstrap/css/bootstrap.min.css',
-    'link!app.css'
+    'regions/page',
+    'views/overview',
+    // App-wide CSS
+    'link!lib/bootstrap/css/bootstrap.min.css'
 ],
-    function(appTemplate){
+    function(regionPage, view){
         var App
 
         // Constructor
         App = function(cfg) {
-            $('body').html(
-                Mustache.render(appTemplate,cfg)
-            )
-            document.title = cfg.title
+            this.curPage = new regionPage({ 'view': new view() })
+            $('body').html( this.curPage.el )
         }
-        // Instance methods
-        App.prototoype = {
-
-        }
-
 
         return App
     }
